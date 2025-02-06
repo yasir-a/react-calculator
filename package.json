@@ -1,0 +1,10 @@
+{
+  "name": "react-calculator",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
