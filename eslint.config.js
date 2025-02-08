@@ -1,11 +1,11 @@
 import js from "@eslint/js";
-import globals from "globals";
+import prettierConfig from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
-import prettierConfig from "eslint-config-prettier";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
-import importPlugin from "eslint-plugin-import";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   { ignores: ["**/node_modules/**", "**/build/**", "**/dist/**"] },
@@ -50,7 +50,7 @@ export default tseslint.config(
         "error",
         {
           groups: ["builtin", "external"],
-          "newlines-between": "always",
+          "newlines-between": "never",
         },
       ],
     },
