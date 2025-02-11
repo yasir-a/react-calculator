@@ -1,5 +1,2 @@
-node_modules
-/build
-
 # Ignore coverage folder
 coverage/
