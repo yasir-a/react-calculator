@@ -53,6 +53,7 @@
     "*": "npm run format",
     "*.{js,ts,jsx,tsx}": "npm run lint",
     "*.{js,ts,tsx}": "npm run typecheck",
+    "*.tsx": "npm run test",
     "*.{html,css,js,ts,md,jsx,tsx,mdx}": "npm run build ."
   }
 }
