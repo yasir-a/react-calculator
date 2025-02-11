@@ -6,7 +6,14 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["**/node_modules/**", "**/build/**", "**/dist/**"] },
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/coverage/**",
+    ],
+  },
   {
     extends: [
       js.configs.recommended,

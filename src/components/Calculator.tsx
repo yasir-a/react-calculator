@@ -1,4 +1,3 @@
-// Calculator.tsx (final)
 import { useState } from "react";
 
 import "../styles/calculator.css";
