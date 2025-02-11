@@ -50,7 +50,7 @@
     "vitest": "^3.0.5"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,ts,tsx}": [
       "npm run format",
       "npm run lint",
       "npm run typecheck",
