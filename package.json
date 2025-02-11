@@ -50,6 +50,11 @@
     "vitest": "^3.0.5"
   },
   "lint-staged": {
-    "config": "./lintstagedrc.json"
+    "*.{js,jsx,ts,tsx}": [
+      "npm run format",
+      "npm run lint",
+      "npm run typecheck",
+      "npm run test"
+    ]
   }
 }
