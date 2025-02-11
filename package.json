@@ -50,6 +50,6 @@
     "vitest": "^3.0.5"
   },
   "lint-staged": {
-    "config": "./lint-staged.config.js"
+    "config": "./lintstagedrc.json"
   }
 }
