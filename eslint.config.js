@@ -1,6 +1,4 @@
 import js from "@eslint/js";
-import prettierConfig from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import reactPlugin from "eslint-plugin-react/configs/recommended.js";
@@ -32,9 +30,7 @@ export default tseslint.config(
     },
     plugins: {
       "react-hooks": reactHooks,
-      import: importPlugin,
       "react-refresh": reactRefresh,
-      prettierConfig,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -45,13 +41,6 @@ export default tseslint.config(
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
-      ],
-      "import/order": [
-        "error",
-        {
-          groups: ["builtin", "external"],
-          "newlines-between": "never",
-        },
       ],
     },
     settings: {
@@ -64,5 +53,4 @@ export default tseslint.config(
       react: { version: "detect" },
     },
   },
-  prettierConfig,
 );
