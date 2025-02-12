@@ -135,6 +135,8 @@ export default function Calculator() {
   };
 
   return (
+    <>
+    <h1 className="2xl font-medium">React Calculator</h1>
     <div data-testid="calculator" className="calculator">
       <div className="display" data-testid="display">
         {display}
@@ -263,5 +265,7 @@ export default function Calculator() {
         </button>
       </div>
     </div>
+    </>
+    
   );
 }

@@ -5,7 +5,7 @@ updates:
   - package-ecosystem: "github-actions"
     # Look for workflow files in the `.github/workflows` directory
     directory: "/"
-    # Check for updates to GitHub Actions every week
+    # Check for updates to GitHub Actions every weekgit
     schedule:
       interval: "weekly"
     commit-message:
