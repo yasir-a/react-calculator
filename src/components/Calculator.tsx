@@ -136,136 +136,135 @@ export default function Calculator() {
 
   return (
     <>
-    <h1 className="2xl font-medium">React Calculator</h1>
-    <div data-testid="calculator" className="calculator">
-      <div className="display" data-testid="display">
-        {display}
+      <h1 className="2xl font-medium">React Calculator</h1>
+      <div data-testid="calculator" className="calculator">
+        <div className="display" data-testid="display">
+          {display}
+        </div>
+        <div className="buttons">
+          <button role="button" className="function" onClick={handleClear}>
+            AC
+          </button>
+          <button role="button" className="function" onClick={handlePlusMinus}>
+            ±
+          </button>
+          <button role="button" className="function" onClick={handlePercentage}>
+            %
+          </button>
+          <button
+            role="button"
+            className="operator"
+            onClick={() => handleOperator("÷")}
+          >
+            ÷
+          </button>
+
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("7")}
+          >
+            7
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("8")}
+          >
+            8
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("9")}
+          >
+            9
+          </button>
+          <button
+            role="button"
+            className="operator"
+            onClick={() => handleOperator("×")}
+          >
+            ×
+          </button>
+
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("4")}
+          >
+            4
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("5")}
+          >
+            5
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("6")}
+          >
+            6
+          </button>
+          <button
+            role="button"
+            className="operator"
+            onClick={() => handleOperator("-")}
+          >
+            -
+          </button>
+
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("1")}
+          >
+            1
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("2")}
+          >
+            2
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber("3")}
+          >
+            3
+          </button>
+          <button
+            role="button"
+            className="operator"
+            onClick={() => handleOperator("+")}
+          >
+            +
+          </button>
+
+          <button
+            role="button"
+            className="number zero"
+            onClick={() => handleNumber("0")}
+          >
+            0
+          </button>
+          <button
+            role="button"
+            className="number"
+            onClick={() => handleNumber(".")}
+          >
+            .
+          </button>
+          <button role="button" className="operator" onClick={calculate}>
+            =
+          </button>
+        </div>
       </div>
-      <div className="buttons">
-        <button role="button" className="function" onClick={handleClear}>
-          AC
-        </button>
-        <button role="button" className="function" onClick={handlePlusMinus}>
-          ±
-        </button>
-        <button role="button" className="function" onClick={handlePercentage}>
-          %
-        </button>
-        <button
-          role="button"
-          className="operator"
-          onClick={() => handleOperator("÷")}
-        >
-          ÷
-        </button>
-
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("7")}
-        >
-          7
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("8")}
-        >
-          8
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("9")}
-        >
-          9
-        </button>
-        <button
-          role="button"
-          className="operator"
-          onClick={() => handleOperator("×")}
-        >
-          ×
-        </button>
-
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("4")}
-        >
-          4
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("5")}
-        >
-          5
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("6")}
-        >
-          6
-        </button>
-        <button
-          role="button"
-          className="operator"
-          onClick={() => handleOperator("-")}
-        >
-          -
-        </button>
-
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("1")}
-        >
-          1
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("2")}
-        >
-          2
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber("3")}
-        >
-          3
-        </button>
-        <button
-          role="button"
-          className="operator"
-          onClick={() => handleOperator("+")}
-        >
-          +
-        </button>
-
-        <button
-          role="button"
-          className="number zero"
-          onClick={() => handleNumber("0")}
-        >
-          0
-        </button>
-        <button
-          role="button"
-          className="number"
-          onClick={() => handleNumber(".")}
-        >
-          .
-        </button>
-        <button role="button" className="operator" onClick={calculate}>
-          =
-        </button>
-      </div>
-    </div>
     </>
-    
   );
 }
