@@ -43,10 +43,10 @@ jobs:
         run: npm ci
 
       - name: Check code format with Prettier
-        run: npm run format
+        run: npm run format:fix
 
       - name: Check code for linting errors with ESLint
-        run: npm run lint
+        run: npm run lint:fix
 
       - name: Test with Vitest
         run: npm run test
