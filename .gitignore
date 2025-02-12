@@ -1,11 +1,9 @@
 node_modules
 /build
+/dist
 
-
-# Ignore coverage folder
+# Ignore coverage folder created by tests locally
 coverage/
 
-package.json
-eslint.config.js
-src/components/Calculator.tsx
+
 
