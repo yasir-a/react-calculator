@@ -39,7 +39,7 @@ jobs:
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
 
-      - name: Install dependencies
+      - name: Install dependencies here
         run: npm ci
 
       - name: Check code format with Prettier
