@@ -1,5 +1,5 @@
 # The name of the workflow
-name: CI
+name: CI Pipeline
 
 # Events that will trigger the workflow to run
 on:
@@ -56,3 +56,10 @@ jobs:
 
       - name: Build with Vite
         run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-build
+          path: dist/
+          retention-days: 3
