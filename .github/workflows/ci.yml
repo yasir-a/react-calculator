@@ -63,3 +63,4 @@ jobs:
           name: production-build
           path: dist/
           retention-days: 3
+          if-no-files-found: error
