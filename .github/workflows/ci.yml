@@ -8,9 +8,9 @@ on:
     branches:
       - main
   # When you push a commit or tag, or when you create a repository from a template
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   # When a workflow is triggered manually, using the GitHub API, GitHub CLI, or GitHub browser interface
   workflow_dispatch:
 

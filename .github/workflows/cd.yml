@@ -10,9 +10,6 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.ref == 'refs/heads/main'
     permissions:
       actions: read
       contents: read
@@ -24,20 +21,24 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Verify CI artifact exists
+      - name: Verify Correct CI Run
         uses: actions/github-script@v7
-        id: check-artifact
+        id: ci-run-check
         with:
           script: |
-            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            const ciRun = await github.rest.actions.getWorkflowRun({
               owner: context.repo.owner,
               repo: context.repo.repo,
               run_id: context.payload.workflow_run.id,
             });
-            return artifacts.data.artifacts.some(artifact => artifact.name === 'production-build');
 
-      - name: Download built artifact
-        if: steps.check-artifact.outputs.result == 'true'
+            const isValid = ciRun.data.event === 'push' && ciRun.data.head_branch === 'main';
+
+            core.setOutput('valid', isValid);
+            return isValid;
+
+      - name: Download Artifact from Push CI
+        if: steps.ci-run-check.outputs.valid == 'true'
         uses: actions/download-artifact@v4
         with:
           name: production-build
@@ -46,16 +47,16 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
 
       - name: Configure GitHub Pages
-        if: steps.check-artifact.outputs.result == 'true'
+        if: steps.ci-run-check.outputs.valid == 'true'
         uses: actions/configure-pages@v4
 
-      - name: Upload deployment bundle
-        if: steps.check-artifact.outputs.result == 'true'
+      - name: Upload Pages Artifact
+        if: steps.ci-run-check.outputs.valid == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
 
       - name: Deploy to GitHub Pages
-        if: steps.check-artifact.outputs.result == 'true'
+        if: steps.ci-run-check.outputs.valid == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
