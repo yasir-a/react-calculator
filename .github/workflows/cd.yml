@@ -31,25 +31,11 @@ jobs:
           echo "Current directory: $(pwd)"
           ls -R
 
-      - name: Create gh-pages branch if missing
-        run: |
-          # Check if branch exists
-          if ! git ls-remote --exit-code origin gh-pages; then
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git config --global user.name "GitHub Actions"
-            git checkout --orphan gh-pages
-            git rm -rf .
-            touch .nojekyll
-            git add .nojekyll
-            git commit -m "Initialize gh-pages branch"
-            git push origin gh-pages
-          fi
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./production-build
+          publish_dir: ./dist
           force_orphan: true
           keep_files: false
           enable_jekyll: false
