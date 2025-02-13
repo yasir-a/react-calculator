@@ -54,8 +54,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,yml,md}": [
-      "npm run lint:fix",
-      "npm run format:fix"
+      "npm run lint",
+      "npm run format"
     ]
   }
 }
