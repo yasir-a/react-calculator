@@ -25,6 +25,7 @@ jobs:
           name: production-build
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./dist
 
       - name: Debug downloaded files
         run: |
