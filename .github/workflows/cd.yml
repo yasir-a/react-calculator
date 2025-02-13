@@ -1,0 +1,50 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    branches: [main]
+    types: [completed]
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Cache Pages config
+        uses: actions/cache@v4
+        with:
+          path: .github/pages
+          key: ${{ runner.os }}-pages-${{ hashFiles('.github/pages/**') }}
+          restore-keys: ${{ runner.os }}-pages-
+
+      - name: Download built artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: production-build
+          path: dist
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+        with:
+          static_site_generator: vite
+
+      - name: Upload deployment bundle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
