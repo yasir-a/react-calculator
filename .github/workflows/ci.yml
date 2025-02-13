@@ -1,25 +1,19 @@
 # The name of the workflow
-name: CI Pipeline
+name: CI
 
-# Events that will trigger the workflow to run
 on:
-  # When a pull request is opened or reopened or when the head branch of the pull request is updated
   pull_request:
     branches:
       - main
-  # When you push a commit or tag, or when you create a repository from a template
-  #push:
-  #  branches:
-  #    - main
-  # When a workflow is triggered manually, using the GitHub API, GitHub CLI, or GitHub browser interface
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
-# Ensure only one workflow runs at a time for each pull request or push to the main branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-# A workflow run is made up of one or more jobs, which run in parallel by default
 jobs:
   build: # The unique identifier for the job
     name: Build # The name for the job, which is displayed in the GitHub UI
