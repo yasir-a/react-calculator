@@ -46,7 +46,7 @@ jobs:
         run: npm run format:fix
 
       - name: Check code for linting errors with ESLint
-        run: npm run lint:fix
+        run: npm run lint
 
       - name: Test with Vitest
         run: npm run test
