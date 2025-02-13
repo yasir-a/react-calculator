@@ -1,0 +1,6 @@
+{
+  "prettier.requireConfig": true,
+  "prettier.useEditorConfig": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false
+}
