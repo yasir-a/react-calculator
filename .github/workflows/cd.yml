@@ -14,7 +14,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestpull
     if: >
       github.event.workflow_run.event == 'push' &&
       github.event.workflow_run.conclusion == 'success'
@@ -25,7 +25,6 @@ jobs:
           name: production-build
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: ./dist
 
       - name: Debug downloaded files
         run: |
