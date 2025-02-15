@@ -30,6 +30,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Debug event name
+        run: |
+          echo "Triggered by event: ${{ github.event_name }}"
+          echo "Triggered by branch: ${{ github.ref }}"
+
       - name: Set up Node.js and cache dependencies
         uses: actions/setup-node@v4
         with:
