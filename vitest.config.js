@@ -8,6 +8,12 @@ export default mergeConfig(
     test: {
       environment: "jsdom",
       globals: true,
+      exclude: [
+        "/release.config.js", // 👈 Targets the root file
+        "**/node_modules/**", // Keep default excludes
+        "**/dist/**",
+        "**/coverage/**",
+      ],
     },
   }),
 );
