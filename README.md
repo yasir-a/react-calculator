@@ -16,15 +16,32 @@ The **Apple Style Calculator** is a simple, modern calculator application that e
 
 - **React.js:** For building the user interface.
 - **TypeScript:** For type safety and improved developer experience.
+- **Prettier:** For code formatting.
+- **ESlint:** For code linting.
 - **Vite:** For a fast development build setup.
 - **CSS:** For styling the application.
+- **TailwingCss:** For quick styling.
+- **husky:** For accessing git hooks.
+- **lint-staged:** For running scripts on staged files.
+- **Github Actions:** For CI/CD/Release workflows.
+- **Semantic-Release:** For generating release.
 - **Vitest & React Testing Library:** For unit testing components.
+
+## Workflows
+
+- **CI:** For quality checks, code integration and artifact upload.
+- **CD:** For deploying to gh-pages.
+- **Release:** For releasing version.
+
+## live Demo
+
+- [Link Text](https://yasir-a.github.io/react-calculator/ "React calculator")
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (>= 14)
+- Node.js (>= 20)
 - npm or yarn
 
 ### Installation
