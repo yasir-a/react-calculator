@@ -58,11 +58,9 @@ jobs:
         run: npm run typecheck
 
       - name: Build with Vite
-        if: ${{ github.event_name == 'push' }}
         run: npm run build
 
       - name: Upload artifact
-        if: ${{ github.event_name == 'push' }}
         uses: actions/upload-artifact@v4
         with:
           name: production-build
