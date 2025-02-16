@@ -59,7 +59,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,yml,md}": [
       "npm run lint",
-      "npm run format"
+      "npm run format:fix"
     ]
   }
 }
