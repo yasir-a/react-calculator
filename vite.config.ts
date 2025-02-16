@@ -6,7 +6,4 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [tailwindcss(), react(), tsconfigPaths()],
   base: "/react-calculator/",
-  build: {
-    outDir: "dist",
-  },
 });

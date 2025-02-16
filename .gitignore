@@ -5,5 +5,6 @@ node_modules
 # Ignore coverage folder created by tests locally
 coverage/
 
+dist/
 
 
