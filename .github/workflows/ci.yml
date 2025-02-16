@@ -59,6 +59,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: production-build
-          path: dist/**
+          path: dist
           retention-days: 3
           if-no-files-found: error
